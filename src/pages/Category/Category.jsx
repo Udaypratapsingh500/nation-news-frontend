@@ -6,7 +6,7 @@ import TopHeader from "../../component/TopHeader/TopHeader";
 import Navbar from "../../component/Navbar/Navbar";
 import Footer from "../../component/Footer/Footer";
 
-import { getNewsByCategory } from "../../Service/newsService";
+import { getNewsByCategory } from "../../service/newsService";
 
 const Category = () => {
   const { category } = useParams();
