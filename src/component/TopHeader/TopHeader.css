@@ -1,0 +1,20 @@
+.top-header{
+    background:#1f2937;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 40px;
+    font-size:14px;
+}
+
+.right{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.live-tv{
+    color:#ff4d4d;
+    font-weight:bold;
+}

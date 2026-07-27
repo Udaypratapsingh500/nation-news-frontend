@@ -1,0 +1,35 @@
+.most-read{
+    max-width:1300px;
+    margin:50px auto;
+}
+
+.section-title{
+    border-left:5px solid #c62828;
+    padding-left:12px;
+    margin-bottom:25px;
+}
+
+.most-card{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.most-card img{
+    width:120px;
+    height:80px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.most-card h4{
+    margin-bottom:10px;
+}
+
+.most-card span{
+    color:gray;
+}

@@ -1,0 +1,104 @@
+.search-page{
+
+    max-width:1200px;
+
+    margin:50px auto;
+
+    padding:20px;
+
+}
+
+.search-page h1{
+
+    margin-bottom:30px;
+
+}
+
+.search-results{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.search-card{
+
+    display:flex;
+
+    gap:20px;
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    color:black;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.search-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.search-card img{
+
+    width:220px;
+
+    height:150px;
+
+    object-fit:cover;
+
+}
+
+.search-card div{
+
+    padding:20px;
+
+}
+
+.search-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.search-card p{
+
+    color:gray;
+
+}
+
+@media(max-width:768px){
+
+.search-results{
+
+grid-template-columns:1fr;
+
+}
+
+.search-card{
+
+flex-direction:column;
+
+}
+
+.search-card img{
+
+width:100%;
+height:220px;
+
+}
+
+}
