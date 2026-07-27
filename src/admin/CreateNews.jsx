@@ -3,7 +3,7 @@ import {
   getCategories,
   createNews,
   uploadImage,
-} from "../Service/newsService";
+} from "../service/newsService";
 import "./CreateNews.css";
 
 const CreateNews = () => {
