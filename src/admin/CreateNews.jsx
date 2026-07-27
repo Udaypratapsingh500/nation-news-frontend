@@ -31,8 +31,12 @@ const CreateNews = () => {
   const loadCategories = async () => {
     try {
       const data = await getCategories();
+
+      alert(JSON.stringify(data));
+
       setCategories(data);
     } catch (error) {
+      alert("Category API Failed");
       console.log(error);
     }
   };
