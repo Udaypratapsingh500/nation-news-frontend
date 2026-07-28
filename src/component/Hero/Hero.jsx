@@ -17,7 +17,7 @@ const Hero = () => {
     try {
 
       const response = await axios.get(
-        "http://localhost:8080/api/news"
+        "https://nation-news-backend.onrender/api/news"
       );
 
       const news = response.data.content;
@@ -66,7 +66,7 @@ const Hero = () => {
         <img
           src={
             featuredNews.imageUrl
-              ? `http://localhost:8080${featuredNews.imageUrl}`
+              ? `https://nation-news-backend.onrender${featuredNews.imageUrl}`
               : "https://placehold.co/900x500?text=No+Image"
           }
           alt={featuredNews.title}

@@ -14,7 +14,7 @@ const BreakingNews = () => {
     try {
 
       const response = await axios.get(
-        "http://localhost:8080/api/news/breaking"
+        "https://nation-news-backend.onrender/api/news/breaking"
       );
 
       setBreakingNews(response.data.content);

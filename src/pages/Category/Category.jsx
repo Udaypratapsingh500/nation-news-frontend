@@ -90,7 +90,7 @@ const Category = () => {
             <div className="card-image">
 
               <img
-                src={`http://localhost:8080${news.imageUrl}`}
+                src={`https://nation-news-backend.onrender.com${news.imageUrl}`}
                 alt={news.title}
                 onError={(e) => {
                   e.target.src =
