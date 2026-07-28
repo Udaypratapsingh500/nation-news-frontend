@@ -21,7 +21,7 @@ const NewsDetails = () => {
     try {
 
       const response = await axios.get(
-        `https://nation-news-backend.onrender/api/news/${id}`
+        `https://nation-news-backend.onrender.com/api/news/${id}`
       );
 
       setNews(response.data);
@@ -87,7 +87,7 @@ const NewsDetails = () => {
           className="news-image"
           src={
             news.imageUrl
-              ? `https://nation-news-backend.onrender${news.imageUrl}`
+              ? `https://nation-news-backend.onrender.com${news.imageUrl}`
               : "https://placehold.co/1200x600?text=No+Image"
           }
           alt={news.title}

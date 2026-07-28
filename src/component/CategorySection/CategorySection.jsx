@@ -16,7 +16,7 @@ const CategorySection = ({ title }) => {
     try {
 
       const response = await axios.get(
-        `https://nation-news-backend.onrender/api/news/category/${title}`
+        `https://nation-news-backend.onrender.com/api/news/category/${title}`
       );
 
       setNews(response.data.content);
@@ -56,7 +56,7 @@ const CategorySection = ({ title }) => {
             <img
               src={
                 item.imageUrl
-                  ? `https://nation-news-backend.onrender${item.imageUrl}`
+                  ? `https://nation-news-backend.onrender.com${item.imageUrl}`
                   : "https://placehold.co/600x400?text=No+Image"
               }
               alt={item.title}
