@@ -1,7 +1,7 @@
 import "./LatestNews.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getHomeData } from "../service/newsService";
+import { getHomeData } from "../../service/newsService";
 
 const LatestNews = () => {
 
