@@ -1,7 +1,7 @@
 import "./LatestNews.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { getHomeData } from "../service/newsService";
 
 const LatestNews = () => {
 
@@ -14,14 +14,12 @@ const LatestNews = () => {
   const loadNews = async () => {
     try {
 
-      const response = await axios.get(
-        "http://localhost:8080/api/news"
-      );
+      const data = await getHomeData();
 
-      setLatestNews(response.data.content);
+      setLatestNews(data.latestNews);
 
     } catch (error) {
-      console.log(error);
+      console.log("Latest News Error:", error);
     }
   };
 
@@ -35,48 +33,58 @@ const LatestNews = () => {
 
       <div className="latest-grid">
 
-        {latestNews.map((item) => (
+        {latestNews.length > 0 ? (
 
-          <Link
-            key={item.id}
-            to={`/news/${item.id}`}
-            className="latest-card"
-          >
+          latestNews.map((item) => (
 
-            <img
-              src={
-                item.imageUrl
-                  ? `http://localhost:8080${item.imageUrl}`
-                  : "https://placehold.co/600x400?text=No+Image"
-              }
-              alt={item.title}
-              onError={(e) => {
-                e.target.src =
-                  "https://placehold.co/600x400?text=No+Image";
-              }}
-            />
+            <Link
+              key={item.id}
+              to={`/news/${item.id}`}
+              className="latest-card"
+            >
 
-            <div className="latest-content">
+              <img
+                src={
+                  item.imageUrl
+                    ? `https://nation-news-backend.onrender.com${item.imageUrl}`
+                    : "https://placehold.co/600x400?text=No+Image"
+                }
+                alt={item.title}
+                onError={(e) => {
+                  e.target.src =
+                    "https://placehold.co/600x400?text=No+Image";
+                }}
+              />
 
-              <span className="category">
-                {item.category?.name}
-              </span>
+              <div className="latest-content">
 
-              <h3>{item.title}</h3>
+                <span className="category">
+                  {item.category?.name}
+                </span>
 
-              <p>
-                {new Date(item.publishedAt).toLocaleDateString()}
-              </p>
+                <h3>{item.title}</h3>
 
-              <span className="read-more">
-                Read Full Story →
-              </span>
+                <p>
+                  {item.publishedAt
+                    ? new Date(item.publishedAt).toLocaleDateString()
+                    : ""}
+                </p>
 
-            </div>
+                <span className="read-more">
+                  Read Full Story →
+                </span>
 
-          </Link>
+              </div>
 
-        ))}
+            </Link>
+
+          ))
+
+        ) : (
+
+          <h3>No News Available</h3>
+
+        )}
 
       </div>
 
